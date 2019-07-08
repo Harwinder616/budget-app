@@ -15,15 +15,7 @@ import getVisibleExpenses from './selectors/expenses';
 
  
 
-store.dispatch(addExpense({description:'sagar-karan',amount:50,createdAt:10}));
-store.dispatch(addExpense({description:'sagar',amount:5000,createdAt:100}));
-store.dispatch(addExpense({description:'sagar-raja',amount:500,createdAt:10000000}));
 
-
-
-    const state=store.getState();
-const visibleExpenses=getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
 
 
 const jsx=(
