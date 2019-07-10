@@ -27,4 +27,3 @@ const expensesReducer=(state=array,action)=>{
   else  return state;
 }
 export default expensesReducer;
-console.log('yoyo');

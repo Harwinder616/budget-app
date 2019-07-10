@@ -15,17 +15,11 @@ const create =(props)=>{
                 props.dispatch(addExpense(expense))
                 props.history.push('/')
             }}/>
-            {state.expense.length||<p>no expenses</p>}
+            
         
         </div>
     )
 }
-const convert=(state)=>{
-    
-        
-    return {
-        expenses:state.expense
-    }
-}
 
-export default connect(convert)(create);
+
+export default connect()(create);
