@@ -69,7 +69,11 @@ export default Connectedlist;*/
 import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
+<<<<<<< HEAD
 import {  sortbyDate, sortbyAmount, Startdate, Enddate, changeText } from '../actions/filters';
+=======
+import { changeText, sortbyDate, sortbyAmount, Startdate, Enddate } from '../actions/filters';
+>>>>>>> 018fc32e05017efa0fa6e2d5c125aa6299c14459
 
 class ExpenseListfilters extends React.Component {
   state = {
