@@ -69,7 +69,7 @@ export default Connectedlist;*/
 import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
-import { setTextFilter, sortbyDate, sortbyAmount, Startdate, Enddate } from '../actions/filters';
+import { changeText, sortbyDate, sortbyAmount, Startdate, Enddate } from '../actions/filters';
 
 class ExpenseListfilters extends React.Component {
   state = {
@@ -89,7 +89,7 @@ class ExpenseListfilters extends React.Component {
           type="text"
           value={this.props.filters.text}
           onChange={(e) => {
-            this.props.dispatch(setTextFilter(e.target.value));
+            this.props.dispatch(changeText(e.target.value));
           }}
         />
         <select
