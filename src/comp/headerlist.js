@@ -5,7 +5,8 @@ import getVisibleExpenses from '../selectors/expenses'
 
 const Expenselist=(props)=>{return(
     <div>
-        <h1>expense List</h1>
+        {props.expenses.length==0?<h2>no expenses</h2>:<h1>expense List</h1>
+}
     
 
        

@@ -20,6 +20,11 @@ export const changeExpense=(id,updates)=>{
         updates
     }
 }
+export const totalExpense=()=>{
+    return {
+        type:'TOTAL_EXPENSE'
+    }
+}
 export const removeExpense=({id}={})=>{
     return{
         type:'REMOVE_EXPENSE',

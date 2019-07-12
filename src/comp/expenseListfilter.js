@@ -70,6 +70,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 import {  sortbyDate, sortbyAmount, Startdate, Enddate, changeText } from '../actions/filters';
+import {  totalExpense} from '../actions/expenses';
+
 
 class ExpenseListfilters extends React.Component {
   state = {
@@ -82,6 +84,9 @@ class ExpenseListfilters extends React.Component {
   onFocusChange = (calendarFocused) => {
     this.setState(() => ({ calendarFocused }));
   }
+  
+
+  
   render() {
     return (
       <div>
@@ -115,6 +120,7 @@ class ExpenseListfilters extends React.Component {
           numberOfMonths={1}
           isOutsideRange={() => false}
         />
+       
       </div>
     );
   }
