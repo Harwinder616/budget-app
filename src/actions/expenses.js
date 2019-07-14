@@ -33,7 +33,7 @@ export const changeExpense=(id,updates)=>{
 
 export const startchangeExpense=(id,updates)=>{
     return (dispatch)=>{
-        return database.ref('expenses'+id).update(updates).then(()=>{
+        return database.ref('expenses/'+id).update(updates).then(()=>{
             dispatch (changeExpense(id,updates))
         })
 
