@@ -8,22 +8,12 @@ const expensesReducer=(state=array,action)=>{
     else if(action.type==='REMOVE_EXPENSE')
     return state.filter((expense)=>{
     return expense.id!==action.id})
-    else if(action.type==='TOTAL_EXPENSE')
+    else if(action.type==='SET_EXPENSE')
     {
 
-        
-        return state.map((expense)=>expense.amount).reduce((total,num)=>{
-            return total+num;
-
-
-        },0)
-
-         
-        
-        
-        
-        
+        return action.expenses
     }
+   
 
     else if(action.type==='CHANGE_EXPENSE')
     {
