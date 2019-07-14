@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+
 import database from '../firebase/firebase'
 
 export const addExpense=(expense)=>{
@@ -30,6 +30,18 @@ export const changeExpense=(id,updates)=>{
         updates
     }
 }
+
+export const startchangeExpense=(id,updates)=>{
+    return (dispatch)=>{
+        return database.ref('expenses'+id).update(updates).then(()=>{
+            dispatch (changeExpense(id,updates))
+        })
+
+        }
+    }
+
+
+
 export const totalExpense=()=>{
     return {
         type:'TOTAL_EXPENSE'
@@ -41,6 +53,19 @@ export const removeExpense=({id}={})=>{
     id:id
 
     }
+}
+
+export const startremoveExpense=({id}={})=>{
+
+    return (dispatch)=>{
+        return database.ref('expenses/'+id).remove().then(()=>{
+            dispatch(removeExpense({id}))
+
+        })
+
+    }
+
+
 }
 
 export const setexpenses=(expenses)=>{
