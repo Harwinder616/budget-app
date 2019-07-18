@@ -8,7 +8,7 @@ import store from './store/configstore.js';
 import 'normalize.css/normalize.css';
 import {startsetExpenses }from './actions/expenses';
 import getVisibleExpenses from './selectors/expenses';
-import './firebase/firebase';
+import {firebase} from './firebase/firebase';
 import 'react-dates/lib/css/_datepicker.css';
 
 
@@ -25,4 +25,14 @@ store.dispatch(startsetExpenses()).then(()=>{
 
 
 })
+firebase.auth().onAuthStateChanged((user)=>{
+    if(user)
+    {
+        console.log('log in')
+    }
+    else
+    console.log('log out')
+})
+
+
    

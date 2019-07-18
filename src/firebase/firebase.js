@@ -1,18 +1,23 @@
 import * as firebase from 'firebase';
 import sagar from '../comp/sagar';
 import moment from 'moment'
-var firebaseConfig = {
-    apiKey: "AIzaSyA6FfiH6RqybbUo_UdqCbajt6epi0RyM1A",
-    authDomain: "budget-app-43b6b.firebaseapp.com",
-    databaseURL: "https://budget-app-43b6b.firebaseio.com",
-    projectId: "budget-app-43b6b",
-    storageBucket: "",
-    messagingSenderId: "939523702249",
-    appId: "1:939523702249:web:c38e453c96b1521c"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const database=firebase.database()
-export{firebase,database as default}
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+  apiKey: "AIzaSyDBzzUviKY0zFcAr4bbT3YOb5WnsOjCDCQ",
+  authDomain: "expensify-app-70c94.firebaseapp.com",
+  databaseURL: "https://expensify-app-70c94.firebaseio.com",
+  projectId: "expensify-app-70c94",
+  storageBucket: "",
+  messagingSenderId: "809057229787",
+  appId: "1:809057229787:web:1a2b10061aafc410"
+};
+// Initialize Firebase                                                      
+firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, database as default };
+
  /* firebase.database().ref('expenses').on('value',(snapshot)=>{
     const expenses=[];
     snapshot.forEach((child)=>{

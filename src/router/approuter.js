@@ -6,7 +6,7 @@ import edit from '../comp/edit';
 import help from '../comp/help';
 import error from '../comp/error';
 import Header from '../comp/header';
-
+import LoginPage from '../comp/login';
 
 
 
@@ -19,7 +19,8 @@ return(
     <div>
         <Header />
     <Switch>
-    <Route path="/" component={sagar} exact={true}/>
+    <Route path="/" component={LoginPage} exact={true}/>
+    <Route path="/dashboard" component={sagar} />
 
     <Route path="/create" component={create} />
     <Route path="/edit/:id" component={edit} />
