@@ -1,29 +1,30 @@
 import React from 'react';
-import{ BrowserRouter, Route,Switch,Link,NavLink } from 'react-router-dom';
+import{ Router, Route,Switch,Link,NavLink } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 import create from '../comp/create';
 import sagar from '../comp/sagar';
 import edit from '../comp/edit';
 import help from '../comp/help';
 import error from '../comp/error';
-import Header from '../comp/header';
 import LoginPage from '../comp/login';
+import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 
-
+export const history=createHistory()
 
 const Routes=()=>{
 
 return(
     
-    <BrowserRouter>
+    <Router history={history}>
     <div>
-        <Header />
     <Switch>
-    <Route path="/" component={LoginPage} exact={true}/>
-    <Route path="/dashboard" component={sagar} />
+    <PublicRoute path="/" component={LoginPage} exact={true}/>
+    <PrivateRoute path="/dashboard" component={sagar} />
 
-    <Route path="/create" component={create} />
-    <Route path="/edit/:id" component={edit} />
+    <PrivateRoute path="/create" component={create} />
+    <PrivateRoute path="/edit/:id" component={edit} />
     <Route path="/help" component={help} />
     <Route component={error} />
 
@@ -32,7 +33,7 @@ return(
     </div>
 
     
-    </BrowserRouter>
+    </Router>
 )
 }
 
